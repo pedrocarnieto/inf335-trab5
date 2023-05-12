@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get the inf335-trab5 code from a GitHub repository
-                git 'https://github.com/pedrocarnieto/inf335-trab5.git'
+                git branch: 'main', url: 'https://github.com/pedrocarnieto/inf335-trab5'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
